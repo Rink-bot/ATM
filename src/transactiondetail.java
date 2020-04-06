@@ -1,5 +1,6 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -7,7 +8,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ATMdeposit extends JFrame {
+public class transactiondetail extends JFrame {
 
 	private JPanel contentPane;
 
@@ -18,7 +19,7 @@ public class ATMdeposit extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ATMdeposit frame = new ATMdeposit();
+					transactiondetail frame = new transactiondetail();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -30,8 +31,8 @@ public class ATMdeposit extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public ATMdeposit() {
-		setTitle("ATMdeposit");
+	public transactiondetail() {
+		setTitle("transactiondetail");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,10 +46,11 @@ public class ATMdeposit extends JFrame {
 				System.out.println("确认按钮被点击");
 				HomePage hp = new HomePage();  
 				hp.setVisible(true);  
-				ATMdeposit.this.setVisible(false);  
+				transactiondetail.this.setVisible(false);
 			}
 		});
-		button.setBounds(145, 177, 113, 27);
+		button.setBounds(154, 162, 113, 27);
 		contentPane.add(button);
 	}
+
 }

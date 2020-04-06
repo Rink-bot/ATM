@@ -35,7 +35,7 @@ public class logininterface extends JFrame {
 	 * Create the frame.
 	 */
 	public logininterface() {
-		setTitle("\u767B\u5F55\u754C\u9762");
+		setTitle("Login inferface");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
