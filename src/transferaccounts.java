@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -44,13 +45,26 @@ public class transferaccounts extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("确认按钮被点击");
-				HomePage hp = new HomePage();  
-				hp.setVisible(true);  
+				HomePage lf = new HomePage();  
+				lf.setVisible(true);
 				transferaccounts.this.setVisible(false);
 			}
 		});
-		button.setBounds(154, 163, 113, 27);
+		button.setBounds(51, 171, 113, 27);
 		contentPane.add(button);
+		
+		JButton button_1 = new JButton("\u9000\u51FA");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int res = JOptionPane.showConfirmDialog(transferaccounts.this, "确定退出系统");  //确认对话框
+			    if(res == JOptionPane.YES_OPTION){   //点击yes按钮
+				   System.exit(0);    //退出程序
+			}
+				
+			}
+		});
+		button_1.setBounds(226, 171, 113, 27);
+		contentPane.add(button_1);
 	}
 
 }

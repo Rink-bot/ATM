@@ -1,11 +1,13 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
 
 public class ATMdeposit extends JFrame {
 
@@ -48,7 +50,19 @@ public class ATMdeposit extends JFrame {
 				ATMdeposit.this.setVisible(false);  
 			}
 		});
-		button.setBounds(145, 177, 113, 27);
+		button.setBounds(52, 178, 113, 27);
 		contentPane.add(button);
+		
+		JButton button_1 = new JButton("\u9000\u51FA");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int res = JOptionPane.showConfirmDialog(ATMdeposit.this, "确定退出系统");  //确认对话框
+			    if(res == JOptionPane.YES_OPTION){   //点击yes按钮
+				   System.exit(0);    //退出程序
+			}
+			    }
+		});
+		button_1.setBounds(237, 178, 113, 27);
+		contentPane.add(button_1);
 	}
 }

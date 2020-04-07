@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
@@ -49,8 +50,20 @@ public class changepassword extends JFrame {
 				changepassword.this.setVisible(false);
 			}
 		});
-		button.setBounds(157, 155, 113, 27);
+		button.setBounds(52, 155, 113, 27);
 		contentPane.add(button);
+		
+		JButton btnNewButton = new JButton("\u9000\u51FA");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int res = JOptionPane.showConfirmDialog(changepassword.this, "确定退出系统");  //确认对话框
+			    if(res == JOptionPane.YES_OPTION){   //点击yes按钮
+				   System.exit(0);    //退出程序
+			}
+			}
+		});
+		btnNewButton.setBounds(268, 155, 113, 27);
+		contentPane.add(btnNewButton);
 	}
 
 }
