@@ -8,11 +8,16 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.Color;
 
 public class HomePage extends JFrame {
 
 	private JPanel contentPane;
-
+	public String name;
+	private JLabel lblHello;
+	private JButton btnNewButton;
 	/**
 	 * Launch the application.
 	 */
@@ -33,6 +38,11 @@ public class HomePage extends JFrame {
 	 * Create the frame.
 	 */
 	public HomePage() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowActivated(WindowEvent e) {				
+			}
+		});
 		setTitle("Homepage");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 451, 325);
@@ -40,6 +50,8 @@ public class HomePage extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		
 		
 		JButton button = new JButton("\u67E5\u8BE2");
 		button.addActionListener(new ActionListener() {
@@ -52,6 +64,11 @@ public class HomePage extends JFrame {
 				HomePage.this.setVisible(false);
 			}
 		});
+		
+		JLabel lblHello = new JLabel("Hello");
+		lblHello.setForeground(Color.RED);
+		lblHello.setBounds(135, 19, 141, 18);
+		contentPane.add(lblHello);
 		button.setBounds(60, 50, 100, 25);
 		contentPane.add(button);
 		
@@ -124,10 +141,6 @@ public class HomePage extends JFrame {
 		});
 		btnNewButton_3.setBounds(240, 150, 100, 25);
 		contentPane.add(btnNewButton_3);
-		
-		JLabel label = new JLabel("\u8BF7\u60A8\u9009\u62E9\u9700\u8981\u7684\u4E1A\u52A1");
-		label.setBounds(135, 19, 141, 18);
-		contentPane.add(label);
 		
 		JButton btnNewButton_4 = new JButton("\u8FD4\u56DE");
 		btnNewButton_4.addActionListener(new ActionListener() {

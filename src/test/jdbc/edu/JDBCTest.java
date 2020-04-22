@@ -1,4 +1,4 @@
-package test.jdbc;
+package test.jdbc.edu;
 
 
 import java.sql.* ;
@@ -41,7 +41,7 @@ public class JDBCTest {
 		  Connection conn =	DriverManager.getConnection(URL, "root", "123456");
 		  System.out.println("数据库连接成功");
 		  // 准备sql
-		  String sql = "select * from user";
+		  String sql = "select * from user";//"select * from user where name='"+name+"'";
 		  Statement  st = conn.createStatement(); //对应sql语句
 		  ResultSet rs = st.executeQuery(sql);  // 执行sql，返回查询结果
 		  // 循环读取并输出结果
